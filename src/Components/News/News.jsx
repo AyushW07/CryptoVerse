@@ -4,10 +4,13 @@ import moment from "moment";
 
 import { useGetNewsQuery } from "../../services/newsAPI";
 
+const demoImage =
+  "https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News";
+
 function News({ simplified }) {
   const { data: cryptoNews } = useGetNewsQuery({
     newsCategory: "Cryptocurrency",
-    count: simplified ? 10 : 100,
+    count: simplified ? 6 : 12,
   });
 
   if (!cryptoNews?.value) {
@@ -16,7 +19,32 @@ function News({ simplified }) {
 
   console.log(cryptoNews);
 
-  return <div>News</div>;
+  return (
+    <Row gutter={[24, 24]}>
+      {cryptoNews.value.map((news, i) => (
+        <Col xs={24} sm={12} lg={8} key={i}>
+          <Card hoverable className="news-card">
+            <a href={news.url} target="_blank" rel="noreferrer">
+              <div className="news-image-container">
+                <Typography.Title className="news-title" level={4}>
+                  {news.name}
+                </Typography.Title>
+                <img
+                  src={news?.image?.thumbnail?.contentUrl || demoImage}
+                  alt="News"
+                />
+              </div>
+              <p>
+                {news.description > 100
+                  ? `${news.description.substring(0, 100)}...`
+                  : news.description}
+              </p>
+            </a>
+          </Card>
+        </Col>
+      ))}
+    </Row>
+  );
 }
 
 export default News;
