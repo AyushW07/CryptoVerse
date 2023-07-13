@@ -8,8 +8,8 @@ import News from "../News/News";
 import Crypto from "../Crypto/Crypto";
 
 function Homepage() {
-  const { data, isfetching } = useGetCryptoQuery();
-  const globalStats = data?.data?.stats;
+  const { data, isfetching } = useGetCryptoQuery(10);
+  const globalStat = data?.data?.stats;
 
   console.log(data);
 
@@ -24,30 +24,33 @@ function Homepage() {
       </Typography.Title>
       <Row>
         <Col span={12}>
-          <Statistic title="Total Cryptocurrencies" value={globalStats.total} />
+          <Statistic
+            title="Total Cryptocurrencies"
+            // value={globalStat.total}
+          />
         </Col>
         <Col span={12}>
           <Statistic
             title="Total Exchanges"
-            value={millify(globalStats.totalExchanges)}
+            // value={millify(globalStat.totalExchanges)}
           />
         </Col>
         <Col span={12}>
           <Statistic
             title="Total MarketCap"
-            value={millify(globalStats.totalMarketCap)}
+            // value={millify(globalStat.totalMarketCap)}
           />
         </Col>
         <Col span={12}>
           <Statistic
             title="Total 24Hr Volume"
-            value={millify(globalStats.total24hVolume)}
+            // value={millify(globalStat.total24hVolume)}
           />
         </Col>
         <Col span={12}>
           <Statistic
             title="Total Market"
-            value={millify(globalStats.totalMarkets)}
+            // value={millify(globalStat.totalMarkets)}
           />
         </Col>
       </Row>
@@ -60,7 +63,7 @@ function Homepage() {
           <Link to="/crypto">Show More</Link>
         </Typography.Title>
       </div>
-      <Crypto simplified />
+      <Crypto simplified={true} />
 
       <div className="home-heading-container">
         <Typography.Title level={2} className="home-title">
