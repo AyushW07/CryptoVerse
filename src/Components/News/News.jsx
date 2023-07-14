@@ -1,11 +1,7 @@
 import React from "react";
-import { Select, Row, Col, Avatar, Typography, Card } from "antd";
-import moment from "moment";
+import { Row, Col, Typography, Card } from "antd";
 
 import { useGetNewsQuery } from "../../services/newsAPI";
-
-const demoImage =
-  "https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News";
 
 function News({ simplified }) {
   const { data: cryptoNews } = useGetNewsQuery({
@@ -17,7 +13,7 @@ function News({ simplified }) {
     return "Loading...";
   }
 
-  console.log(cryptoNews);
+  // console.log(cryptoNews);
 
   return (
     <Row gutter={[24, 24]}>
@@ -29,10 +25,7 @@ function News({ simplified }) {
                 <Typography.Title className="news-title" level={4}>
                   {news.name}
                 </Typography.Title>
-                <img
-                  src={news?.image?.thumbnail?.contentUrl || demoImage}
-                  alt="News"
-                />
+                <img src={news?.image?.thumbnail?.contentUrl} alt="News" />
               </div>
               <p>
                 {news.description > 100

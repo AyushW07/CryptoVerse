@@ -16,10 +16,13 @@ export const cryptoAPI = createApi({
     getCrypto: builder.query({
       query: (count) => createRequest(`/coins?limit=${count}`),
     }),
+    getCryptoDetails: builder.query({
+      query: (coinId) => createRequest(`/coin/${coinId}`),
+    }),
   }),
 });
 
-export const { useGetCryptoQuery } = cryptoAPI;
+export const { useGetCryptoQuery, useGetCryptoDetailsQuery } = cryptoAPI;
 
 // import { request } from "axios";
 
