@@ -8,7 +8,7 @@ To see a live demo of the website, visit [Demo Link](https://crypto-verse-ayush0
 
 ## Features
 
-- - **Live Cryptocurrency Data:** Get access to live cryptocurrency prices, market capitalization, volume, and other key data points. Stay informed about the latest market trends and fluctuations.
+- **Live Cryptocurrency Data:** Get access to live cryptocurrency prices, market capitalization, volume, and other key data points. Stay informed about the latest market trends and fluctuations.
 
 - **Detailed Cryptocurrency Information:** Dive deeper into each cryptocurrency with detailed profiles. Explore essential information such as price, market cap rankings, trading volumes, and more.
 
