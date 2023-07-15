@@ -26,7 +26,7 @@ function Navbar() {
     } else {
       setMenu(true);
     }
-  }, []);
+  }, [screen]);
 
   return (
     <div className="Navbar_container">

@@ -32,12 +32,8 @@ function App() {
           </div>
         </Layout>
 
-        <div
-          className="footer"
-          level={5}
-          style={{ color: "white", textAlign: "left" }}
-        >
-          <Typography.Title style={{ textAlign: "center" }}>
+        <div className="footer" level={5}>
+          <Typography.Title style={{ color: "white", textAlign: "center" }}>
             CryptoVerse <br />
             All right resesrved. <br />
             &copy; Ayush

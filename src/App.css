@@ -71,13 +71,6 @@ a:hover {
   border: none !important;
 }
 
-.loader {
-  height: 81vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 @media screen and (max-width: 1300px) {
   .main {
     margin-left: 50px;
@@ -97,7 +90,7 @@ a:hover {
 }
 
 @media screen and (max-width: 800px) {
-  .app {
+  .App {
     flex-direction: column;
     overflow: hidden;
   }
@@ -321,28 +314,6 @@ a:hover {
   margin-left: 10px;
 }
 
-.chart-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 50px;
-  color: #0071bd;
-}
-.chart-title {
-  color: #0071bd !important;
-}
-.price-container {
-  display: flex !important;
-  gap: 20px !important;
-  align-items: center !important;
-  flex-wrap: wrap !important;
-}
-.price-change {
-  font-weight: 900 !important;
-}
-.current-price {
-  margin-top: 0px !important;
-  font-weight: 900 !important;
-}
 .home-heading-container {
   display: flex;
   justify-content: space-between;
@@ -367,10 +338,6 @@ a:hover {
 }
 .crypto-card .crypto-image {
   width: 35px;
-}
-.select-timeperiod {
-  width: 200px !important;
-  margin-top: 20px !important;
 }
 
 .footer {
