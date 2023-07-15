@@ -22,10 +22,10 @@ To see a live demo of the website, visit [Demo Link](https://crypto-verse-ayush0
 
 ## Technologies Used
 
-- React.js for building the frontend user interface
-- Ant Design UI library for styling and components
-- CoinRanking API for fetching cryptocurrency data
-- Bing News Search API for retrieving cryptocurrency news articles
+- **React.js** for building the frontend user interface
+- **Ant Design UI** library for styling and components
+- **CoinRanking API** for fetching cryptocurrency data
+- **Bing News Search API** for retrieving cryptocurrency news articles
 
 
 
