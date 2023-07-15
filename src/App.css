@@ -152,7 +152,7 @@ a:hover {
   gap: 10px;
 }
 
-.coin-heading-container .coin-name {
+.coin-heading-container .coin_name {
   font-weight: 900;
   color: var(--pink);
 }

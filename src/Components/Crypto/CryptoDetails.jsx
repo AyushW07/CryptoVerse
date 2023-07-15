@@ -25,6 +25,10 @@ function CryptoDetails() {
 
   const cryptoDetails = data?.data?.coin;
 
+  if (!cryptoDetails) {
+    return <div>Loading...</div>;
+  }
+
   const stats = [
     {
       title: "Price to USD",
@@ -34,7 +38,9 @@ function CryptoDetails() {
     { title: "Rank", value: cryptoDetails?.rank, icon: <NumberOutlined /> },
     {
       title: "24h Volume",
-      value: `$ ${cryptoDetails?.volume && millify(cryptoDetails?.volume)}`,
+      value: `$ ${
+        cryptoDetails?.["24hVolume"] && millify(cryptoDetails?.["24hVolume"])
+      }`,
       icon: <ThunderboltOutlined />,
     },
     {
@@ -91,7 +97,38 @@ function CryptoDetails() {
     },
   ];
 
-  return <div>CryptoDetails {coinId}</div>;
+  return (
+    <Col className="coin-detail-container">
+      <Col className="coin-heading-container">
+        <Typography.Title level={2} className="coin_name">
+          {cryptoDetails.name} Price
+        </Typography.Title>
+        <p>
+          {cryptoDetails.name} live price in US Dollar View value statistics.
+          market value and supply.
+        </p>
+      </Col>
+
+      <Col className="stats-container">
+        <Col className="coin-value-statistics">
+          <Col className="coin-value-statistics-heading">
+            <Typography.Title level={3} className="coin-details-heading">
+              {cryptoDetails.name} Value Statistics
+            </Typography.Title>
+          </Col>
+          {stats.map(({ icon, title, value }) => (
+            <Col className="coin-stats">
+              <Col className="coin-stats-name">
+                <Typography.Text>{icon}</Typography.Text>
+                <Typography.Text>{title}</Typography.Text>
+              </Col>
+              <Typography.Text className="stats">{value}</Typography.Text>
+            </Col>
+          ))}
+        </Col>
+      </Col>
+    </Col>
+  );
 }
 
 export default CryptoDetails;

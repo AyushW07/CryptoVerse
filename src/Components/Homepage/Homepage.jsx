@@ -11,6 +11,10 @@ function Homepage() {
   const { data, isfetching } = useGetCryptoQuery(10);
   const globalStat = data?.data?.stats;
 
+  if (!globalStat) {
+    return <div>Loading...</div>;
+  }
+
   // console.log(data);
 
   if (isfetching) {
@@ -24,33 +28,30 @@ function Homepage() {
       </Typography.Title>
       <Row>
         <Col span={12}>
-          <Statistic
-            title="Total Cryptocurrencies"
-            // value={globalStat.total}
-          />
+          <Statistic title="Total Cryptocurrencies" value={globalStat.total} />
         </Col>
         <Col span={12}>
           <Statistic
             title="Total Exchanges"
-            // value={millify(globalStat.totalExchanges)}
+            value={millify(globalStat.totalExchanges)}
           />
         </Col>
         <Col span={12}>
           <Statistic
             title="Total MarketCap"
-            // value={millify(globalStat.totalMarketCap)}
+            value={millify(globalStat.totalMarketCap)}
           />
         </Col>
         <Col span={12}>
           <Statistic
             title="Total 24Hr Volume"
-            // value={millify(globalStat.total24hVolume)}
+            value={millify(globalStat.total24hVolume)}
           />
         </Col>
         <Col span={12}>
           <Statistic
             title="Total Market"
-            // value={millify(globalStat.totalMarkets)}
+            value={millify(globalStat.totalMarkets)}
           />
         </Col>
       </Row>
