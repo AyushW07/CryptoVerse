@@ -5,7 +5,6 @@ import Navbar from "./Components/Navbar/Navbar";
 import Homepage from "./Components/Homepage/Homepage";
 import Crypto from "./Components/Crypto/Crypto";
 import CryptoDetails from "./Components/Crypto/CryptoDetails";
-import Exchanges from "./Components/Exchanges/Exchanges";
 import News from "./Components/News/News";
 
 function App() {
@@ -28,9 +27,6 @@ function App() {
               <Route exact path="/crypto/:coinId" element={<CryptoDetails />} />
             </Routes>
             <Routes>
-              <Route exact path="/exchanges" element={<Exchanges />} />
-            </Routes>
-            <Routes>
               <Route exact path="/news" element={<News />} />
             </Routes>
           </div>
@@ -39,15 +35,16 @@ function App() {
         <div
           className="footer"
           level={5}
-          style={{ color: "white", textAlign: "center" }}
+          style={{ color: "white", textAlign: "left" }}
         >
-          <Typography.Title>
+          <Typography.Title style={{ textAlign: "center" }}>
             CryptoVerse <br />
-            All right resesrved
+            All right resesrved. <br />
+            &copy; Ayush
           </Typography.Title>
           <Space>
             <Link to="/">Home</Link>
-            <Link to="/exchanges">Exchanges</Link>
+            <Link to="/crypto">Cryptocurrencies</Link>
             <Link to="/news">News</Link>
           </Space>
         </div>
